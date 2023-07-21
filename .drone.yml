@@ -1,0 +1,27 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  disable: true
+
+steps:
+  - name: clone
+    image: docker.io/bdebyl/alpine-git
+    commands:
+      - git clone $DRONE_GIT_HTTP_URL .
+      - git checkout $DRONE_COMMIT
+      - echo -n "1.0.$DRONE_BUILD_NUMBER" > .tags
+
+  - name: publish
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: bdebyl/sshpass-cron
+    when:
+      branch:
+        - master
