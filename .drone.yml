@@ -10,7 +10,7 @@ steps:
   - name: clone
     image: docker.io/bdebyl/alpine-git
     commands:
-      - git clone https://github.com/bdebyl/docker-sshpass-cron.git .
+      - git clone $DRONE_GIT_HTTP_URL .
       - git checkout $DRONE_COMMIT
       - echo -n "1.0.$DRONE_BUILD_NUMBER" > .tags
 
@@ -27,6 +27,6 @@ steps:
         - main
 ---
 kind: signature
-hmac: 0e34dd444cad6fadeb8cf686930b499a7b66f9201183903ab95ff91a78dde5b3
+hmac: a27d0e2a3e855132ec5087377dea6e6082db05de774f11e5f2be5f526e88b7b2
 
 ...
