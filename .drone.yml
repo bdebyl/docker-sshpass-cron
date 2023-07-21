@@ -24,7 +24,7 @@ steps:
       repo: bdebyl/sshpass-cron
     when:
       branch:
-        - master
+        - main
 ---
 kind: signature
 hmac: b4ab1b6b49b41056e4d546553a8dada7673bda59827fa0716a8bd91285d15257
