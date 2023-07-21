@@ -1,6 +1,6 @@
 FROM alpine:3.18.2
 LABEL org.opencontainers.image.authors="bastian@bdebyl.net"
-ENTRYPOINT ["crond-crontab.sh"]
+ENTRYPOINT ["/bin/crond-crontab.sh"]
 
 COPY crond-crontab.sh /bin/crond-crontab.sh
 
