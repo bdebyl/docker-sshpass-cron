@@ -4,7 +4,8 @@ ENTRYPOINT ["/bin/crond-crontab.sh"]
 
 COPY crond-crontab.sh /bin/crond-crontab.sh
 
-RUN apk --update add \
+RUN chmod +x /bin/crond-crontab.sh & \
+    apk --update add \
     openssh \
     sshpass 
 
