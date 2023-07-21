@@ -1,3 +1,3 @@
 #!/bin/sh
 /usr/bin/crontab /mnt/crontab
-/usr/sbin/crond -f
+exec /usr/sbin/crond -f
