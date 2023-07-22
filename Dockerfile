@@ -7,6 +7,7 @@ COPY crond-crontab.sh /bin/crond-crontab.sh
 RUN chmod +x /bin/crond-crontab.sh & \
     apk --update add \
     openssh \
-    sshpass 
+    sshpass \
+    tzdata
 
 VOLUME ["/mnt"]
